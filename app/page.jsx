@@ -1,130 +1,181 @@
-export default function Home() {
-  const container = { maxWidth: 1050, margin: "0 auto", padding: "0 20px" };
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Globe, PhoneCall, BarChart3, ShieldCheck } from "lucide-react";
 
-  const card = {
-    background: "#fff",
-    border: "1px solid #e6e8ef",
-    borderRadius: 14,
-    padding: 22,
-    boxShadow: "0 6px 20px rgba(16,24,40,0.06)",
-  };
-
-  const muted = { color: "#4b5563" };
-
-  const button = {
-    display: "inline-block",
-    padding: "12px 18px",
-    borderRadius: 12,
-    border: "1px solid #111",
-    background: "#111",
-    color: "#fff",
-    textDecoration: "none",
-    fontWeight: 600,
-  };
-
+export default function BusinessBoosterWebsite() {
   return (
-    <main style={{ fontFamily: "Arial, sans-serif", color: "#0b1220", background: "#ffffff" }}>
-      {/* HERO */}
-      <section style={{ padding: "80px 0", background: "linear-gradient(180deg,#f6f8ff 0%, #ffffff 100%)" }}>
-        <div style={container}>
-          <div style={{ maxWidth: 820 }}>
-            <p style={{ ...muted, margin: 0, fontWeight: 600 }}>Business Booster</p>
-            <h1 style={{ fontSize: 46, lineHeight: 1.1, margin: "12px 0 14px" }}>
-              Professional support to help your business grow.
-            </h1>
-            <p style={{ ...muted, fontSize: 18, lineHeight: 1.6, margin: "0 0 22px" }}>
-              We help with business setup, marketing strategy, and ongoing maintenance to grow visibility, engagement, and revenue.
-            </p>
-            <a href="#contact" style={button}>Get Started</a>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-slate-100">
+      {/* Header */}
+      <header className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <h1 className="text-2xl font-semibold tracking-wide">Business Booster</h1>
+        <nav className="hidden md:flex gap-8 text-sm text-slate-300">
+          <a href="#services" className="hover:text-white">Services</a>
+          <a href="#process" className="hover:text-white">Process</a>
+          <a href="#about" className="hover:text-white">About</a>
+          <a href="#contact" className="hover:text-white">Contact</a>
+        </nav>
+      </header>
 
-      {/* SERVICES */}
-      <section style={{ padding: "60px 0" }}>
-        <div style={container}>
-          <h2 style={{ fontSize: 32, margin: "0 0 26px" }}>Our Services</h2>
-
-          <div style={{ display: "grid", gap: 18, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))" }}>
-            <div style={card}>
-              <h3 style={{ marginTop: 0 }}>Business Setup</h3>
-              <p style={{ ...muted, marginBottom: 0 }}>
-                Get structured the right way with clear systems and a professional foundation.
-              </p>
-            </div>
-
-            <div style={card}>
-              <h3 style={{ marginTop: 0 }}>Marketing Strategy</h3>
-              <p style={{ ...muted, marginBottom: 0 }}>
-                A practical plan tailored to your goals and your audience to increase results.
-              </p>
-            </div>
-
-            <div style={card}>
-              <h3 style={{ marginTop: 0 }}>Ongoing Growth & Maintenance</h3>
-              <p style={{ ...muted, marginBottom: 0 }}>
-                Continuous improvements to keep your visibility, engagement, and revenue moving up.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS (with arrows) */}
-      <section style={{ padding: "60px 0", background: "#f9fafc" }}>
-        <div style={container}>
-          <h2 style={{ fontSize: 32, margin: "0 0 26px" }}>How It Works</h2>
-
-          {/* Desktop row with arrows */}
-          <div style={{ display: "grid", gap: 14, alignItems: "center", gridTemplateColumns: "1fr auto 1fr auto 1fr" }}>
-            <div style={card}>
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Step 1</div>
-              <p style={{ ...muted, margin: 0, lineHeight: 1.6 }}>
-                Send our team an email or message with your needs or questions. We’ll follow up shortly and schedule a meeting.
-              </p>
-            </div>
-
-            <div aria-hidden="true" style={{ fontSize: 26, color: "#6b7280", textAlign: "center" }}>➜</div>
-
-            <div style={card}>
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Step 2</div>
-              <p style={{ ...muted, margin: 0, lineHeight: 1.6 }}>
-                We set up the program and identify the best approach for your needs.
-              </p>
-            </div>
-
-            <div aria-hidden="true" style={{ fontSize: 26, color: "#6b7280", textAlign: "center" }}>➜</div>
-
-            <div style={card}>
-              <div style={{ fontWeight: 800, marginBottom: 8 }}>Step 3</div>
-              <p style={{ ...muted, margin: 0, lineHeight: 1.6 }}>
-                Once approved by your company, we implement what’s needed into your business.
-              </p>
-            </div>
-          </div>
-
-          {/* Small-screen note */}
-          <p style={{ ...muted, marginTop: 14, fontSize: 14 }}>
-            (On mobile, steps will stack automatically.)
+      {/* Hero */}
+      <section className="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight">
+            Grow Your Business with
+            <span className="block text-indigo-400">Smart Automation & Design</span>
+          </h2>
+          <p className="mt-6 text-slate-300 max-w-xl">
+            Business Booster helps companies look professional, attract more clients,
+            and increase revenue through professional websites, automated calls, and
+            complete marketing & social media management.
           </p>
+          <div className="mt-8 flex gap-4">
+            <Button className="rounded-2xl px-6 py-5 text-base">Get Started</Button>
+            <Button variant="outline" className="rounded-2xl px-6 py-5 text-base">
+              Free Consultation
+            </Button>
+          </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="bg-slate-900/60 rounded-3xl shadow-2xl p-10"
+        >
+          <p className="text-lg text-slate-200">
+            Websites. Automation. Marketing.
+          </p>
+          <p className="mt-4 text-slate-400">
+            Everything your business needs to scale — in one professional solution.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="max-w-7xl mx-auto px-6 py-24">
+        <h3 className="text-3xl font-semibold mb-12">Our Services</h3>
+        <div className="grid md:grid-cols-3 gap-8">
+          <Card className="rounded-2xl bg-slate-900/70">
+            <CardContent className="p-8">
+              <Globe className="h-10 w-10 text-indigo-400" />
+              <h4 className="mt-6 text-xl font-medium">Website Development</h4>
+              <p className="mt-3 text-slate-400">
+                Modern, fast, and professional websites designed to build trust and
+                convert visitors into clients.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl bg-slate-900/70">
+            <CardContent className="p-8">
+              <PhoneCall className="h-10 w-10 text-indigo-400" />
+              <h4 className="mt-6 text-xl font-medium">Automated Calls</h4>
+              <p className="mt-3 text-slate-400">
+                Smart call automation that captures leads, follows up instantly,
+                and never misses a customer.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl bg-slate-900/70">
+            <CardContent className="p-8">
+              <BarChart3 className="h-10 w-10 text-indigo-400" />
+              <h4 className="mt-6 text-xl font-medium">Marketing & Social Media</h4>
+              <p className="mt-3 text-slate-400">
+                Setup marketing strategy, and ongoing maintenance to grow visibility,
+                engagement, and revenue.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* CTA */}
-      <section id="contact" style={{ padding: "70px 0" }}>
-        <div style={container}>
-          <div style={{ ...card, display: "grid", gap: 10 }}>
-            <h2 style={{ fontSize: 28, margin: 0 }}>Ready to Boost Your Business?</h2>
-            <p style={{ ...muted, margin: 0 }}>
-              Send us an email or message to get started.
-            </p>
-            <div style={{ fontSize: 16, lineHeight: 1.8 }}>
-              📧 <strong>azbusinessbooster@gmail.com</strong><br />
-              📞 <strong>602-245-8245</strong>
-            </div>
+      {/* Process */}
+      <section id="process" className="bg-slate-900/50 py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <h3 className="text-3xl font-semibold mb-12">How It Works</h3>
+          <div className="grid md:grid-cols-3 gap-8 items-center">
+            {/* Step 1 */}
+            <Card className="rounded-2xl bg-slate-900/70">
+              <CardContent className="p-8 text-center">
+                <p className="text-indigo-400 font-semibold mb-2">Step 1</p>
+                <h4 className="text-xl font-medium">Initial Contact</h4>
+                <p className="mt-3 text-slate-400 text-sm">
+                  Reach out to our team with your goals, questions, or requirements.
+                  We’ll respond promptly and schedule a consultation to understand
+                  your business needs.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Step 2 */}
+            <Card className="rounded-2xl bg-slate-900/70">
+              <CardContent className="p-8 text-center">
+                <p className="text-indigo-400 font-semibold mb-2">Step 2</p>
+                <h4 className="text-xl font-medium">Strategy & Setup</h4>
+                <p className="mt-3 text-slate-400 text-sm">
+                  Our team designs and configures the optimal solution, selecting
+                  the right tools, automation, and marketing approach tailored
+                  specifically to your objectives.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Step 3 */}
+            <Card className="rounded-2xl bg-slate-900/70">
+              <CardContent className="p-8 text-center">
+                <p className="text-indigo-400 font-semibold mb-2">Step 3</p>
+                <h4 className="text-xl font-medium">Launch & Integration</h4>
+                <p className="mt-3 text-slate-400 text-sm">
+                  Once approved by your company, we deploy and integrate everything
+                  seamlessly into your business operations, ensuring a smooth and
+                  professional launch.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
-    </main>
+
+      {/* About */}
+      <section id="about" className="max-w-7xl mx-auto px-6 py-24">
+        <h3 className="text-3xl font-semibold mb-6">Why Business Booster</h3>
+        <p className="max-w-3xl text-slate-300">
+          We help businesses look professional, operate efficiently, and grow
+          faster. By combining clean design, automation, and marketing expertise,
+          Business Booster becomes your long-term growth partner.
+        </p>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-slate-900/70 py-24">
+        <div className="max-w-3xl mx-auto px-6 text-center">
+          <h3 className="text-3xl font-semibold">Ready to Boost Your Business?</h3>
+          <p className="mt-4 text-slate-300">
+            Contact our team to discuss your goals and discover how we can help
+            your business grow with professional systems and strategies.
+          </p>
+
+          <div className="mt-10 bg-slate-900/80 rounded-2xl p-8 shadow-lg inline-block">
+            <p className="text-lg font-medium text-slate-200">
+              Send us an email or message
+            </p>
+            <p className="mt-4 text-slate-400">
+              Email: <span className="text-slate-200">azbusinessbooster@gmail.com</span>
+            </p>
+            <p className="mt-2 text-slate-400">
+              Phone: <span className="text-slate-200">602-245-8245</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 text-center text-sm text-slate-500">
+        © {new Date().getFullYear()} BusinessBooster.com · All Rights Reserved
+      </footer>
+    </div>
   );
 }
